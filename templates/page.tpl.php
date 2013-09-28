@@ -103,10 +103,8 @@ $sidebar_right = render($page['sidebar_right']);
 			<?php 
 			if (!render($page['copyright'])): //If there is no specific content in the copyright area, display default ?> 
 				<p>
-					<a id="byui"  href="http://byui.edu/">BYU-Idaho</a>
-					<a id="byuh"  href="http://byuh.edu/">BYU-Hawaii</a>
-					<a id="ldsbc" href="http://www.ldsbc.edu/">LDS Business College</a> 
-					<a id="lds"   href="http://lds.org/">The Church of Jesus Christ of Latter-day Saints</a>
+					<a id="byucougars"  href="http://byucougars.com/">BYU Cougars Sports</a>
+					<a id="byuarts"  href="http://byuarts.com/">BYU Arts</a>
 				</p>
 			<?php else: 
 				print render($page['copyright']);
