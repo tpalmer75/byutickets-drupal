@@ -101,37 +101,43 @@ body #page-footer #footer-links {
     background-position: 0px 13px;
     max-width: 275px;
   }
+
+  /* line 78, ../sass/byutickets.sass */
+  body .nav-container, body #search-menu {
+    background-color: white;
+    border-bottom: 1px solid #999999;
+  }
 }
 @media all and (min-width: 600px) {
-  /* line 83, ../sass/byutickets.sass */
+  /* line 87, ../sass/byutickets.sass */
   #site-name {
     max-width: 315px;
     height: 50px;
   }
 
-  /* line 86, ../sass/byutickets.sass */
+  /* line 90, ../sass/byutickets.sass */
   header #header-top {
     height: 60px;
   }
 }
 @media all and (min-width: 899px) {
-  /* line 94, ../sass/byutickets.sass */
+  /* line 98, ../sass/byutickets.sass */
   #site-name {
     max-width: 360px;
   }
 
-  /* line 96, ../sass/byutickets.sass */
+  /* line 100, ../sass/byutickets.sass */
   header #header-top {
     height: 70px;
   }
 
-  /* line 98, ../sass/byutickets.sass */
+  /* line 102, ../sass/byutickets.sass */
   body .nav-container {
-    top: 68px;
+    top: 69px;
   }
 }
 @media all and (min-width: 1146px) {
-  /* line 106, ../sass/byutickets.sass */
+  /* line 110, ../sass/byutickets.sass */
   header #header-top h1 {
     margin-left: 0px;
   }
