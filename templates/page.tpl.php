@@ -8,7 +8,7 @@
 	  
 		<?php if ($site_name): ?>
 			<h1>
-				<a href="<?php print $front_page; ?>" id="site-name" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a>
+				<a class="ir" href="<?php print $front_page; ?>" id="site-name" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a>
 			</h1>
 		<?php endif; ?>
 

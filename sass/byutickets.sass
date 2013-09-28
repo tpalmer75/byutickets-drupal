@@ -2,8 +2,106 @@
 
 @import "compass"
 
-// Hide stuff
-#logo, .sign-in, #search-menu
-	//display: none
+$bgcolor: #777
+
+html
+	background-color: $bgcolor
+
+html body
+	background-color: #fff
+
+body #content
+	+box-shadow(none)
+
+header #header-top
+	border-top: 1px solid transparent
+	height: 45px
+
+#search-container
+	opacity: 0
+
+#search-menu
+	display: none
+
+#site-name 
+	height: 40px
+	background: url(../img/byutickets.svg) 0px 10px no-repeat
+	display: block
+	position: relative
+	background-size: 100%
+
+.ir
+	background-color: transparent
+	border: 0
+	overflow: hidden
+	*text-indent: -999em
+
+.ir:before
+	content: ""
+	display: block
+	width: 0
+	height: 150%
+
+body #page-footer
+	background-color: $bgcolor
+	border-bottom: none
+	border-top-color: #222
+
+	a, a:link
+		color: #aaa
+	a:hover, a:focus
+		color: #ccc
+	a:visited
+		color: #999
+
+	#footer-links
+		border-bottom: none
 
 
+
+
+// 300px
+
+@media all and (min-width: 300px)
+	html body
+		background: url(../img/carbon_fibre.png)
+
+	#search-menu
+		display: block
+	header #header-top
+		height: 50px
+	#site-name
+		background-position: 0px 13px
+		max-width: 275px
+
+
+
+
+// 600px
+
+@media all and (min-width: 600px)
+	#site-name
+		max-width: 315px
+		height: 50px
+	header #header-top
+		height: 60px
+
+
+
+// 899px
+
+@media all and (min-width: 899px)
+	#site-name
+		max-width: 360px
+	header #header-top
+		height: 70px
+	body .nav-container
+		top: 68px
+
+
+
+// 1146px
+
+@media all and (min-width: 1146px)
+	header #header-top h1
+		margin-left: 0px

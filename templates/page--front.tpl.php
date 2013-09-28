@@ -8,7 +8,7 @@
 	  
 		<?php if ($site_name): ?>
 			<h1>
-				<a href="<?php print $front_page; ?>" id="site-name" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a>
+				<a class="ir" href="<?php print $front_page; ?>" id="site-name" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a>
 			</h1>
 		<?php endif; ?>
 		
@@ -35,6 +35,11 @@
 				print drupal_render(menu_tree(variable_get('menu_secondary_links_source', 'secondary-menu')));	
 			endif; ?>
 		</nav>
+</div>
+
+<div id="search-menu">
+	<div id="search-container" role="search"></div>
+	<a href="#primary-nav" class="menu-button">Menu</a>
 </div>
 
 <?php 
