@@ -1,19 +1,19 @@
 name = BYU Tickets
-description = This is a sub-theme of theme BYU 2.0, created for the BYUtickets.com web site
-core = 7.x
-base theme = BYU
+description = Drupal theme for BYU Tickets site. Subtheme of BYU.
+version		= 1.0
+base theme  = byu
+core        = 7.x
 
 ; STYLESHEETS
-stylesheets[all][]   = css/byutickets.css
+stylesheets[all][] = css/byutickets.css
 
 ; SCRIPTS
-scripts[] = js/byutickets.js
+scripts[] = js/byutickets.min.js
 
+regions[help]        	= Help
 regions[content]        = Content
-regions[calendar]    	= Calendar (Front Page Only)
-regions[News]           = News (Front Page Only)
-regions[sidebar_left]  = Left sidebar
-regions[sidebar_right] = Right sidebar
+regions[sidebar_left]   = Left sidebar
+regions[sidebar_right]  = Right sidebar
 regions[footer]         = Footer
 regions[copyright]      = Copyright
 
@@ -22,10 +22,9 @@ regions[copyright]      = Copyright
 
 regions[page_top]       = Page top
 regions[page_bottom]    = Page bottom
+regions_hidden[]        = help
 
-; Various page elements output by the theme can be toggled on and off. The
-; "features" control which of these check boxes display on the
-; admin/appearance config page.
+; Various page elements output by the theme can be toggled on and off. The "features" control which of these check boxes display on the admin/appearance config page.
 
 features[] = name
 features[] = logo

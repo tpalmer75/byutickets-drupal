@@ -1,6 +1,10 @@
 /* byutickets.css */
 
 @import "compass"
+@import "shared/colors"
+@import "bootstrap/variables"
+@import "bootstrap/mixins"
+@import "bootstrap/navs"
 
 $bgcolor: #777
 
@@ -20,7 +24,7 @@ header #header-top
 #search-container
 	opacity: 0
 
-#search-menu
+#search-menu, #logo
 	display: none
 
 #site-name 
@@ -30,17 +34,17 @@ header #header-top
 	position: relative
 	background-size: 100%
 
-.ir
+#site-name, .ir
 	background-color: transparent
 	border: 0
 	overflow: hidden
 	*text-indent: -999em
 
-.ir:before
-	content: ""
-	display: block
-	width: 0
-	height: 150%
+	&:before
+		content: ""
+		display: block
+		width: 0
+		height: 150%
 
 body #page-footer
 	background-color: $bgcolor
@@ -59,6 +63,31 @@ body #page-footer
 
 
 
+// Drupal admin
+ul.tabs.primary
+	position: absolute
+	top: -10px
+	right: 0
+	border-bottom: none
+	li 
+		a
+			border: 1px solid $linkColor
+			+border-radius(4px)
+			color: $blue1
+			background-color: $blue9
+			&:hover
+				background-color: $blue8
+		&.active a
+			border: none
+			color: #999
+			background: #fff
+
+
+// Tickets button
+.content .get-tickets
+	display: inline-block
+	margin-bottom: 1em
+
 
 // 300px
 
@@ -76,8 +105,8 @@ body #page-footer
 
 	body 
 		.nav-container, #search-menu
-			background-color: #fff
-			border-bottom: 1px solid #999
+			//background-color: #fff
+			//border-bottom: 1px solid #999
 
 
 
@@ -98,11 +127,26 @@ body #page-footer
 	#site-name
 		max-width: 360px
 	header #header-top
-		height: 70px
+		height: 30px
 	body .nav-container
 		top: 69px
+	#search-menu
+		right: 0
+		top: 0
+		.menu-button
+			display: block
 
 
+
+// 960px
+@media all and (min-width: 960px)
+	header #header-top
+		height: 70px
+	body .nav-container
+		top: 69px	
+
+
+	
 
 // 1146px
 

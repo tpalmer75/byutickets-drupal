@@ -5,31 +5,21 @@
 ?>
 <header id="main-header" role="banner">
 	<div id="header-top" class="wrapper">
-	  
+			
 		<?php if ($site_name): ?>
 			<h1>
-				<a class="ir" href="<?php print $front_page; ?>" id="site-name" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a>
+				<a href="<?php print $front_page; ?>" id="site-name" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a>
 			</h1>
 		<?php endif; ?>
-
-		<?php if (module_exists('cas')): ?>
-			<?php if (user_is_logged_in()): ?>
-				<a href="caslogout" class="sign-in button">Sign Out</a>
-			<?php else: ?>
-				<a href="cas" class="sign-in button">Sign in</a>
-			<?php endif; ?>
-		<?php else: ?>
-			<?php if (user_is_logged_in()): ?>
-				<a href="logout" class="sign-in button">Sign out</a>
-			<?php else: ?>
-				<a href="user" class="sign-in button">Sign in</a>
-			<?php endif; ?>			
-		<?php endif; ?>
-		
 	</div>
 </header>
 
-
+<div id="search-menu">	
+	<div id="search-container" role="search">	
+		<?php print render($search_box) ?>
+	</div>
+	<a href="#primary-nav" class="menu-button">Menu</a>  
+</div>
 	
 <div class="nav-container">
 		<nav id="primary-nav" role="navigation">	
@@ -38,7 +28,8 @@
 					if (module_exists('byu_megamenu')) {
 						print _renderMainMenu();
 					} else {
-						print drupal_render(menu_tree(variable_get('menu_main_links_source', 'main-menu')));
+						$menu = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
+						print drupal_render($menu);	
 					}
 				endif; 
 			?>
@@ -46,7 +37,8 @@
 		
 		<nav id="secondary-nav" role="navigation">
 			<?php if ($secondary_menu):
-				print drupal_render(menu_tree(variable_get('menu_secondary_links_source', 'secondary-menu')));	
+				$menu = menu_tree(variable_get('menu_secondary_links_source', 'secondary-menu'));
+				print drupal_render($menu);	
 			endif; ?>
 		</nav>
 </div>
@@ -59,13 +51,13 @@ $sidebar_right = render($page['sidebar_right']);
 
 <div id="content" class="wrapper clearfix <?php print ($sidebar_left && $sidebar_right ? 'two-sidebars' : ($sidebar_left || $sidebar_right ? 'one-sidebar' : '')) ?>" role="main">
 	<?php print render($page['highlighted']); ?>
-	<?php print $breadcrumb; ?>
+	<?php //print $breadcrumb; ?>
 
-	<?php print render($title_prefix); ?>
-	<?php if ($title): ?>
+	<?php //print render($title_prefix); ?>
+	<?php if ( 0 /*$title && !drupal_is_front_page() */): ?>
 	  <h1 class="title" id="page-title"><?php print $title; ?></h1>
 	<?php endif; ?>
-	<?php print render($title_suffix); ?>
+	<?php //print render($title_suffix); ?>
 	<?php print $messages; ?>
 	<?php print render($tabs); ?>
 	<?php print render($page['help']); ?>
@@ -94,18 +86,31 @@ $sidebar_right = render($page['sidebar_right']);
 <footer id="page-footer" role="contentinfo">
 		<div id="footer-links">
 			<div class="wrapper">
-				<?php print render($page['footer']); ?>		
+				<?php print render($page['footer']); ?>
+
+				<?php if (module_exists('cas')): ?>
+					<?php if (user_is_logged_in()): ?>
+						<a href="caslogout">Sign Out</a>
+					<?php else: ?>
+						<a href="cas">Sign in</a>
+					<?php endif; ?>
+				<?php else: ?>
+					<?php if (user_is_logged_in()): ?>
+						<a href="logout">Sign out</a>
+					<?php else: ?>
+						<a href="user">Sign in</a>
+					<?php endif; ?>			
+				<?php endif; ?>
+
 			</div>
-		</di
+		</div>
 
 		<div id="footer-bottom">
-			<div class="wrapper">
+			<div class="wrapper clearfix">
 			<?php 
 			if (!render($page['copyright'])): //If there is no specific content in the copyright area, display default ?> 
-				<p>
-					<a id="byucougars"  href="http://byucougars.com/">BYU Cougars Sports</a>
-					<a id="byuarts"  href="http://byuarts.com/">BYU Arts</a>
-				</p>
+				<a id="byuarts"  href="http://byuarts.com/">BYU Arts</a>
+				<a id="byucougars"  href="http://byucougars.com/">BYU Athletics</a>
 			<?php else: 
 				print render($page['copyright']);
 			endif; ?>
