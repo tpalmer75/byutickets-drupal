@@ -86,21 +86,25 @@ $sidebar_right = render($page['sidebar_right']);
 <footer id="page-footer" role="contentinfo">
 		<div id="footer-links">
 			<div class="wrapper">
-				<?php print render($page['footer']); ?>
 
-				<?php if (module_exists('cas')): ?>
-					<?php if (user_is_logged_in()): ?>
-						<a href="caslogout">Sign Out</a>
+				<div class="col alpha">
+					<h2>Links</h2>
+					<?php if (module_exists('cas')): ?>
+						<?php if (user_is_logged_in()): ?>
+							<a href="caslogout">Sign Out</a>
+						<?php else: ?>
+							<a href="cas">Admin</a>
+						<?php endif; ?>
 					<?php else: ?>
-						<a href="cas">Sign in</a>
+						<?php if (user_is_logged_in()): ?>
+							<a href="logout">Sign out</a>
+						<?php else: ?>
+							<a href="user">Admin</a>
+						<?php endif; ?>			
 					<?php endif; ?>
-				<?php else: ?>
-					<?php if (user_is_logged_in()): ?>
-						<a href="logout">Sign out</a>
-					<?php else: ?>
-						<a href="user">Sign in</a>
-					<?php endif; ?>			
-				<?php endif; ?>
+				</div>
+
+				<?php print render($page['footer']); ?>
 
 			</div>
 		</div>

@@ -475,7 +475,7 @@
 
 /* line 11, ../sass/byutickets.sass */
 html {
-  background-color: #777777;
+  background-color: #002255;
 }
 
 /* line 14, ../sass/byutickets.sass */
@@ -530,37 +530,51 @@ header #header-top {
   height: 150%;
 }
 
-/* line 49, ../sass/byutickets.sass */
+/* line 52, ../sass/byutickets.sass */
 body #page-footer {
-  background-color: #777777;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #dddddd), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(#dddddd, #cccccc);
+  background-image: -moz-linear-gradient(#dddddd, #cccccc);
+  background-image: -o-linear-gradient(#dddddd, #cccccc);
+  background-image: linear-gradient(#dddddd, #cccccc);
   border-bottom: none;
-  border-top-color: #222222;
+  border-top-color: #cccccc;
 }
-/* line 54, ../sass/byutickets.sass */
+/* line 57, ../sass/byutickets.sass */
 body #page-footer a, body #page-footer a:link {
-  color: #aaaaaa;
+  color: #666666;
 }
-/* line 56, ../sass/byutickets.sass */
+/* line 59, ../sass/byutickets.sass */
 body #page-footer a:hover, body #page-footer a:focus {
-  color: #cccccc;
-}
-/* line 58, ../sass/byutickets.sass */
-body #page-footer a:visited {
-  color: #999999;
+  color: #222222;
 }
 /* line 61, ../sass/byutickets.sass */
+body #page-footer a:visited {
+  color: #777777;
+}
+/* line 64, ../sass/byutickets.sass */
 body #page-footer #footer-links {
   border-bottom: none;
 }
 
-/* line 67, ../sass/byutickets.sass */
+/* line 68, ../sass/byutickets.sass */
+#footer-bottom {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #001948), color-stop(50%, #002255));
+  background-image: -webkit-linear-gradient(#001948, #002255 50%);
+  background-image: -moz-linear-gradient(#001948, #002255 50%);
+  background-image: -o-linear-gradient(#001948, #002255 50%);
+  background-image: linear-gradient(#001948, #002255 50%);
+  border-top-color: #666666;
+}
+
+/* line 76, ../sass/byutickets.sass */
 ul.tabs.primary {
   position: absolute;
   top: -10px;
   right: 0;
   border-bottom: none;
 }
-/* line 73, ../sass/byutickets.sass */
+/* line 82, ../sass/byutickets.sass */
 ul.tabs.primary li a {
   border: 1px solid #4477aa;
   -webkit-border-radius: 4px;
@@ -569,96 +583,115 @@ ul.tabs.primary li a {
   color: #002255;
   background-color: #e0edf9;
 }
-/* line 78, ../sass/byutickets.sass */
+/* line 87, ../sass/byutickets.sass */
 ul.tabs.primary li a:hover {
   background-color: #d1e4f6;
 }
-/* line 80, ../sass/byutickets.sass */
+/* line 89, ../sass/byutickets.sass */
 ul.tabs.primary li.active a {
   border: none;
   color: #999999;
   background: white;
 }
 
-/* line 87, ../sass/byutickets.sass */
+/* line 98, ../sass/byutickets.sass */
 .content .get-tickets {
   display: inline-block;
   margin-bottom: 1em;
 }
 
+/* line 106, ../sass/byutickets.sass */
+.venue {
+  margin-top: 2em;
+}
+/* line 109, ../sass/byutickets.sass */
+.venue.nav {
+  width: 20%;
+  min-width: 9em;
+  float: left;
+}
+/* line 114, ../sass/byutickets.sass */
+.venue.tab-content {
+  padding-left: 5%;
+}
+/* line 117, ../sass/byutickets.sass */
+.venue.tab-content .sectionTitle {
+  margin-top: 0.25em;
+}
+
 @media all and (min-width: 300px) {
-  /* line 95, ../sass/byutickets.sass */
+  /* line 132, ../sass/byutickets.sass */
   html body {
     background: url(../img/carbon_fibre.png);
   }
 
-  /* line 98, ../sass/byutickets.sass */
+  /* line 135, ../sass/byutickets.sass */
   #search-menu {
     display: block;
   }
 
-  /* line 100, ../sass/byutickets.sass */
+  /* line 137, ../sass/byutickets.sass */
   header #header-top {
     height: 50px;
   }
 
-  /* line 102, ../sass/byutickets.sass */
+  /* line 139, ../sass/byutickets.sass */
   #site-name {
     background-position: 0px 13px;
     max-width: 275px;
   }
 }
 @media all and (min-width: 600px) {
-  /* line 116, ../sass/byutickets.sass */
+  /* line 153, ../sass/byutickets.sass */
   #site-name {
     max-width: 315px;
     height: 50px;
   }
 
-  /* line 119, ../sass/byutickets.sass */
+  /* line 156, ../sass/byutickets.sass */
   header #header-top {
     height: 60px;
   }
 }
 @media all and (min-width: 899px) {
-  /* line 127, ../sass/byutickets.sass */
+  /* line 164, ../sass/byutickets.sass */
   #site-name {
     max-width: 360px;
   }
 
-  /* line 129, ../sass/byutickets.sass */
+  /* line 166, ../sass/byutickets.sass */
   header #header-top {
     height: 30px;
   }
 
-  /* line 131, ../sass/byutickets.sass */
+  /* line 168, ../sass/byutickets.sass */
   body .nav-container {
     top: 69px;
   }
 
-  /* line 133, ../sass/byutickets.sass */
+  /* line 170, ../sass/byutickets.sass */
   #search-menu {
     right: 0;
     top: 0;
   }
-  /* line 136, ../sass/byutickets.sass */
+  /* line 173, ../sass/byutickets.sass */
   #search-menu .menu-button {
     display: block;
   }
 }
 @media all and (min-width: 960px) {
-  /* line 143, ../sass/byutickets.sass */
+  /* line 180, ../sass/byutickets.sass */
   header #header-top {
     height: 70px;
   }
 
-  /* line 145, ../sass/byutickets.sass */
+  /* line 182, ../sass/byutickets.sass */
   body .nav-container {
     top: 69px;
   }
 }
 @media all and (min-width: 1146px) {
-  /* line 154, ../sass/byutickets.sass */
+  /* line 191, ../sass/byutickets.sass */
   header #header-top h1 {
     margin-left: 0px;
   }

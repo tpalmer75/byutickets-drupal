@@ -6,7 +6,7 @@
 @import "bootstrap/mixins"
 @import "bootstrap/navs"
 
-$bgcolor: #777
+$bgcolor: $blue1
 
 html
 	background-color: $bgcolor
@@ -46,20 +46,29 @@ header #header-top
 		width: 0
 		height: 150%
 
+
+
+// Footer
 body #page-footer
-	background-color: $bgcolor
+	+background-image(linear-gradient(#ddd, #ccc))
 	border-bottom: none
-	border-top-color: #222
+	border-top-color: #ccc
 
 	a, a:link
-		color: #aaa
+		color: #666
 	a:hover, a:focus
-		color: #ccc
+		color: #222
 	a:visited
-		color: #999
+		color: #777
 
 	#footer-links
 		border-bottom: none
+
+
+#footer-bottom
+	+background-image(linear-gradient($blue0, $bgcolor 50%))
+	border-top-color: #666
+
 
 
 
@@ -83,10 +92,38 @@ ul.tabs.primary
 			background: #fff
 
 
+
+
 // Tickets button
 .content .get-tickets
 	display: inline-block
 	margin-bottom: 1em
+
+
+
+
+// Venue page
+.venue
+	margin-top: 2em
+
+	&.nav
+		width: 20%
+		min-width: 9em
+		float: left
+
+	&.tab-content
+		padding-left: 5%
+
+		.sectionTitle
+			margin-top: .25em
+
+
+
+
+
+
+
+
 
 
 // 300px

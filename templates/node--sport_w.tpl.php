@@ -87,42 +87,44 @@
 <?php
   render($content);
 
-  if (!empty($node->field_gender)) { 
-    foreach($node->field_gender['und'] as $tag) {
-      $gender = $tag['taxonomy_term']->name;
-    }
+  if (!empty($node->field_schedule_url)) { 
+    $schedule = render( $content['field_schedule_url'] );
+  } else { 
+    $schedule = ''; 
   }
+
+  if (!empty($node->field_tickets_url)) { 
+    $ticketsLink = render( $content['field_tickets_url'] );
+  } else { 
+    $ticketsLink = ''; 
+  }
+
+  if (!empty($node->field_info)) { 
+    $info = render( $content['field_info'] );
+  } else { 
+    $info = ''; 
+  }
+
 ?>
 
 
-<h1<?php print $title_attributes; ?>><?php print $gender . " " . $title; ?></h1>
+<h1<?php print $title_attributes; ?>>Women’s <?php print $title; ?></h1>
 
-<?php print render( $content['field_tickets_url'] ); ?>
+<?php print $ticketsLink; ?>
 
 <ul class="nav nav-tabs" id="sportTab">
   <li class="active"><a href="#info" data-toggle="tab">Info</a></li>
   <li><a href="#schedule" data-toggle="tab">Schedule</a></li>
+  <li><a href="#venue" data-toggle="tab">Seating</a></li>
 </ul>
 
 <div class="tab-content">
-  <?php print render($content['field_info']) ; ?>
-  <div class="tab-pane" id="schedule">...</div>
+  <?php print $info; ?>
+  <div class="tab-pane" id="schedule">
+    <iframe src="<?php print $schedule; ?>" width="100%" height="100%" align="center" ></iframe>
+  </div>
+  <div class="tab-pane" id="venue">
+  </div>
 </div>
-
-<script>
-var fbURL="http://byucougars.com/schedule/m-basketball/";
-
-jQuery.ajax({
-    url: fbURL+"&callback=?",
-    data: "message=",
-    type: 'POST',
-    success: function (resp) {
-        alert(resp);
-    },
-    error: function(e) {
-        alert('Error: '+e);
-    }  
-});
-</script>
 
 <!-- /.node-sport -->
