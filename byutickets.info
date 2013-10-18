@@ -5,10 +5,14 @@ base theme  = byu
 core        = 7.x
 
 ; STYLESHEETS
+stylesheets[all][] = css/byu_megamenu.css
 stylesheets[all][] = css/byutickets.css
+stylesheets[screen and (min-width:16em)][] = css/responsive.css
+
 
 ; SCRIPTS
 scripts[] = js/byutickets.min.js
+scripts[] = js/script.js
 
 regions[help]        	= Help
 regions[content]        = Content

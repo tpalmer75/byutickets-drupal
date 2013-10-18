@@ -46,5 +46,5 @@
 ?>
 
 <?php foreach ($items as $delta => $item): ?>
-	<?php print render($item); ?>
+	<?php print $item['#element']['url']; ?>
 <?php endforeach ?>

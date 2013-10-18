@@ -1,12 +1,17 @@
 /* byutickets.css */
 
 @import "compass"
-@import "shared/colors"
+
 @import "bootstrap/variables"
 @import "bootstrap/mixins"
 @import "bootstrap/navs"
 
+@import "shared/colors"
+@import "shared/variables"
+
+
 $bgcolor: $blue1
+$visitedColor: #539
 
 html
 	background-color: $bgcolor
@@ -20,6 +25,9 @@ body #content
 header #header-top
 	border-top: 1px solid transparent
 	height: 45px
+
+#page
+	position: relative
 
 #search-container
 	opacity: 0
@@ -94,11 +102,164 @@ ul.tabs.primary
 
 
 
-// Tickets button
-.content .get-tickets
-	display: inline-block
-	margin-bottom: 1em
+// Home page
+.sports.home
+	
+	.sport
+		position: relative
+		float: left
+		width: 100%
+		margin: .35em 1%
+		overflow: hidden
+		a
+			color: #fff
+			display: block
+		a.info
+			height: 8em
+			padding: 1em
+			font-family: $serif-ssm-font-stack
+			text-align: center
+			+background-image( linear-gradient($blue2, $blue1) )
+			+box-shadow( 0 1px 5px rgba(0,0,0,0.25) )
+			+border-radius( 5px )
+			+box-sizing( border-box )
+			+text-shadow( 0 -1px 1px rgba(0,0,0,0.75) )
+			
+			&:hover
+				+background-image( linear-gradient( mix($blue2, $blue1), darken($blue0, .5) ) )
+				+text-shadow( 0 -1px 1px $blue0 )
+				text-decoration: none
+		a.tickets 
+			position: absolute
+			bottom: 0
+			right: 0
+			padding: .35em 1.2em
+			background-color: mix($blue3, $blue4)
+			border-top: 1px solid $blue1
+			border-left: 1px solid $blue2
+			color: $blue8
+			+border-radius( 3px 0 4px 0 )
+			+text-shadow( 0 -1px 0 $blue0 )
+			&:hover
+				text-decoration: none
+				background-color: $blue4
+				color: #fff
+				border-color: $blue5
+				&:before
+					color: $blue8
+			&:before
+				color: $blue6
 
+		.mw, .title
+			display: block
+			padding-left: 30%
+
+		.mw 
+			font-size: 1.5em
+			min-height: 0.75em
+		.title 
+			font-size: 2em
+			padding-top: .25em
+		.bgimage 
+			position: absolute
+			top: 0
+			left: 25%
+			margin-left: -60px
+
+
+	@media all and (min-width: 30em)
+		.sport
+			width: 48%
+	@media all and (min-width: $large-width)
+		.sport
+			width: 31%
+
+
+
+
+
+
+
+// Sport page
+#schedule
+	.scheduleLink
+		a
+			padding: .25em
+
+#schedule-table
+	font-size: 14px
+	width: 100%
+	border-left: none
+
+	.date, .loc, .time
+		a
+			display: block
+			pointer-events: none
+			cursor: default
+			color: #444
+
+	.date
+		.highlight.short
+			display: none
+
+		.day
+			padding: 0
+			color: #777
+
+	.opp
+		.story
+			display: none
+
+	.loc
+		img
+			margin-top: 4px
+	.time
+		.win
+			color: $green3
+		.loss
+			color: $red0
+		.recap-box
+			display: none
+
+	.web, .radio, .tv
+		display: none
+
+	.tournament-header
+		background-color: $blue7
+	td, th
+		border-left: none !important
+		border-right: none !important
+
+	tr
+		border-left: none
+		&.even, &.odd
+			background-color: #fff
+		&.tourny
+			background-color: $blue9
+		&.past
+			background-color: #e9e9e9
+			&.tourny
+				background-color: #ddd
+
+
+
+// Tickets button
+.get-tickets
+	display: inline-block
+	color: $yellow1
+
+.get-tickets, .tickets
+	&:before
+		content: "\f145"
+		font-family: 'fontawesome'
+		font-weight: normal
+		padding-right: .5em
+		margin-left: -.25em
+		color: $yellow0
+		+text-shadow( 0 -1px 0 rgba(0,0,0,0.5) )
+
+#sportTab
+	margin-top: 1.5em
 
 
 
@@ -121,14 +282,9 @@ ul.tabs.primary
 
 
 
+// 256px
 
-
-
-
-
-// 300px
-
-@media all and (min-width: 300px)
+@media all and (min-width: $small-width)
 	html body
 		background: url(../img/carbon_fibre.png)
 
@@ -149,7 +305,7 @@ ul.tabs.primary
 
 // 600px
 
-@media all and (min-width: 600px)
+@media all and (min-width: $med-width)
 	#site-name
 		max-width: 315px
 		height: 50px
@@ -158,35 +314,32 @@ ul.tabs.primary
 
 
 
-// 899px
+// 640px
 
-@media all and (min-width: 899px)
-	#site-name
-		max-width: 360px
-	header #header-top
-		height: 30px
+@media all and (min-width: $full-menu-width)
 	body .nav-container
-		top: 69px
-	#search-menu
-		right: 0
-		top: 0
-		.menu-button
-			display: block
+		top: 60px
+	#primary-nav > ul > li:last-child
+		float: right
+		margin-right: 2%
 
 
 
-// 960px
-@media all and (min-width: 960px)
+
+// 900px
+@media all and (min-width: $large-width)
 	header #header-top
 		height: 70px
 	body .nav-container
-		top: 69px	
+		top: 70px	
 
 
 	
 
 // 1146px
 
-@media all and (min-width: 1146px)
+@media all and (min-width: $larger-width)
 	header #header-top h1
 		margin-left: 0px
+	#primary-nav > ul > li:last-child
+		margin-right: -2%

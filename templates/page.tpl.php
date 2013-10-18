@@ -51,13 +51,11 @@ $sidebar_right = render($page['sidebar_right']);
 
 <div id="content" class="wrapper clearfix <?php print ($sidebar_left && $sidebar_right ? 'two-sidebars' : ($sidebar_left || $sidebar_right ? 'one-sidebar' : '')) ?>" role="main">
 	<?php print render($page['highlighted']); ?>
-	<?php //print $breadcrumb; ?>
 
-	<?php //print render($title_prefix); ?>
-	<?php if ( 0 /*$title && !drupal_is_front_page() */): ?>
+	<?php if ( $title && !drupal_is_front_page()): ?>
 	  <h1 class="title" id="page-title"><?php print $title; ?></h1>
 	<?php endif; ?>
-	<?php //print render($title_suffix); ?>
+
 	<?php print $messages; ?>
 	<?php print render($tabs); ?>
 	<?php print render($page['help']); ?>
@@ -72,7 +70,7 @@ $sidebar_right = render($page['sidebar_right']);
     <?php endif; ?>
 	
 	<div id="main-content">
-		<?php print render($page['content']); ?> 
+		<?php print render($page['content']); ?>
 	</div>
 	  
 	<?php if ($sidebar_right): ?>
@@ -100,7 +98,7 @@ $sidebar_right = render($page['sidebar_right']);
 							<a href="logout">Sign out</a>
 						<?php else: ?>
 							<a href="user">Admin</a>
-						<?php endif; ?>			
+						<?php endif; ?>
 					<?php endif; ?>
 				</div>
 

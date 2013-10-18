@@ -88,7 +88,14 @@
   render($content);
 
   if (!empty($node->field_schedule_url)) { 
-    $schedule = render( $content['field_schedule_url'] );
+    $scheduleLink = render( $content['field_schedule_url'] );
+    $scheduleLink = trim( $scheduleLink );
+
+    $schedule = get_schedule( $scheduleLink );
+
+    $schedule = str_replace('href="/', 'href="http://byucougars.com/', $schedule);
+    $schedule = str_replace('src="/', 'src="http://byucougars.com/', $schedule);
+
   } else { 
     $schedule = ''; 
   }
@@ -105,10 +112,12 @@
     $info = ''; 
   }
 
+  $womens = "Women’s ";
+
 ?>
 
 
-<h1<?php print $title_attributes; ?>>Women’s <?php print $title; ?></h1>
+<h1<?php print $title_attributes; ?>><?php print $womens . $title; ?></h1>
 
 <?php print $ticketsLink; ?>
 
@@ -121,7 +130,8 @@
 <div class="tab-content">
   <?php print $info; ?>
   <div class="tab-pane" id="schedule">
-    <iframe src="<?php print $schedule; ?>" width="100%" height="100%" align="center" ></iframe>
+    <p class="scheduleLink"><a href="<?php print $scheduleLink; ?>">Full game information and broadcast details at byucougars.com</a></p>
+    <?php print $schedule; ?>
   </div>
   <div class="tab-pane" id="venue">
   </div>
