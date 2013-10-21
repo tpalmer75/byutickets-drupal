@@ -35,6 +35,25 @@
     $gender = '';
   }
   
+  if (!empty($node->field_sport_venue)) { 
+    $venueTitle = render( $content['field_sport_venue'] );
+    $query = new EntityFieldQuery();
+
+    $query->entityCondition('entity_type', 'node')
+      ->propertyCondition( 'title', trim($venueTitle) );
+
+    $result = $query->execute();
+    $nid = current( $result['node'] )->nid;
+    $venueNode = node_load( $nid );
+    node_build_content( $venueNode );
+    $venueContent = $venueNode->content;
+
+    $venue = render( $venueContent['field_venue_seating'] );
+
+
+  } else {
+    $venue = '';
+  }
 
 
 ?>
@@ -43,6 +62,7 @@
 <h1<?php print $title_attributes; ?>><?php print $gender . $title; ?></h1>
 
 <?php print $ticketsLink; ?>
+
 
 <ul class="nav nav-tabs" id="sportTab">
   <li class="active"><a href="#info" data-toggle="tab">Info</a></li>
@@ -57,6 +77,7 @@
     <?php print $schedule; ?>
   </div>
   <div class="tab-pane" id="venue">
+    <?php print $venue; ?>
   </div>
 </div>
 
