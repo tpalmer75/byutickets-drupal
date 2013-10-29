@@ -20,6 +20,7 @@
 	@import "bootstrap/variables";
 	@import "bootstrap/mixins";
 
+
 // CSS Reset
 //  @import "reset";
 
@@ -30,25 +31,25 @@
 
 // Base CSS
 	@import "bootstrap/type";
-	@import "bootstrap/code";
+//	@import "bootstrap/code";
 //	@import "bootstrap/forms";
-	@import "bootstrap/tables";
+//	@import "bootstrap/tables";
 
 // Components: common
 //	@import "bootstrap/sprites";
-	@import "bootstrap/dropdowns";
+//	@import "bootstrap/dropdowns";
 //	@import "bootstrap/component-animations";
 //	@import "bootstrap/close";
 
 // Components: Buttons & Alerts
-	@import "bootstrap/buttons";
-	@import "bootstrap/button-groups";
+//	@import "bootstrap/buttons";
+//	@import "bootstrap/button-groups";
 //	@import "bootstrap/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons
 
 // Components: Nav
 //	@import "bootstrap/navs";
 //	@import "bootstrap/navbar";
-	@import "bootstrap/breadcrumbs";
+//	@import "bootstrap/breadcrumbs";
 //	@import "bootstrap/pagination";
 //	@import "bootstrap/pager";
 
@@ -67,10 +68,10 @@
 //	@import "bootstrap/hero-unit";
 
 // Utility classes
-	@import "bootstrap/utilities"; // Has to be last to override when necessary
+//	@import "bootstrap/utilities"; // Has to be last to override when necessary
 	
 // Drupal Specific	
-@import "drupal-specific"; // Has to be last to override when necessary
+//	@import "drupal-specific"; // Has to be last to override when necessary
 
 
 
@@ -81,7 +82,7 @@
 FontAwesome
 
 */
-@import "responsive/font-awesome";
+//	@import "responsive/font-awesome";
 
 
 
@@ -92,18 +93,19 @@ FontAwesome
 BYU Styles 
 
 */
-@import "responsive/bootstrap-override";
-@import "responsive/header-footer";
-@import "responsive/breadcrumb";
-@import "responsive/search";
-@import "responsive/nav";
+//	@import "responsive/bootstrap-override";
+	@import "responsive/header-footer";
+//	@import "responsive/breadcrumb";
+//	@import "responsive/search";
+	@import "responsive/nav";
 
-//@import "responsive/anythingslider";
-//@import "responsive/slider";
+//	@import "responsive/anythingslider";
+//	@import "responsive/slider";
 
-//@import "responsive/calendar";
-@import "responsive/content";
-@import "responsive/type";
+//	@import "responsive/calendar";
+	@import "responsive/content";
+	@import "responsive/type";
+//	@import "megamenu"
 
 
 
@@ -151,6 +153,8 @@ BYU Styles
 	}
 
 }
+
+
 
 
 

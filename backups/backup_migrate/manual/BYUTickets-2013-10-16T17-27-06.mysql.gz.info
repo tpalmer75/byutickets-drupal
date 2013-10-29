@@ -1,8 +1,0 @@
-filename = "BYUTickets-2013-10-16T17-27-06"
-description = ""
-datestamp = "1381966027"
-generator = "Backup and Migrate (http://drupal.org/project/backup_migrate)"
-generatorversion = "7.x-2.x"
-sites[0][version] = "7.23"
-sites[0][name] = "BYU Tickets"
-sites[0][url] = "http://localhost:8888/byutickets.com/"

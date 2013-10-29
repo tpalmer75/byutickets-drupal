@@ -17,8 +17,8 @@
 }
 
 // Buttons
-a.mybyu, a.sign-in, .open #search-button { 
-	@include transition(background-color .3s); 
+a.mybyu, a.sign-in, .open #search-button {
+	@include transition(background-color .3s);
 }
 
 #header-top a.sign-in {
