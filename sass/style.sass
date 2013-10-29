@@ -20,7 +20,7 @@
 
 
 
-$bgcolor: $blue1
+$bgcolor: #555
 $visitedColor: #539
 
 html
@@ -84,7 +84,7 @@ body #page-footer
 
 
 #footer-bottom
-	+background-image(linear-gradient($blue0, $bgcolor 50%))
+	+background-image(linear-gradient(#444, $bgcolor 50%))
 	border-top-color: #666
 
 
@@ -287,6 +287,41 @@ ul.tabs.primary
 
 		.sectionTitle
 			margin-top: .25em
+
+
+// Footer
+#footer-bottom .wrapper
+	text-align:center
+
+
+.svg #byuarts
+	background: url("../img/byu-arts.svg") top left no-repeat
+	background-size: contain
+	width: 130px
+	height: 25px
+
+
+#byuarts
+	background: url("../img/byu-arts.png") top left no-repeat
+	background-size: contain
+	width: 175px
+	height: 34px
+
+//.svg #byucougars
+
+#byucougars
+	background: url("../img/byucougars.png") top left no-repeat
+	background-size: contain
+	width: 300px
+	height: 40px
+
+#footer-bottom a
+	background-size: contain
+	display: inline-block
+	margin: .75em 2em
+
+#footer-bottom .wrapper
+	text-align: center
 
 
 
