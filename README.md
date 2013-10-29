@@ -1,4 +1,11 @@
-byutickets-drupal
+byutickets-evenue
 =================
 
-Drupal subtheme for byutickets site
+Markup for header and footer is included in index.html.
+
+All styles (including reset) are included in css/style.css
+
+All JS (including Modernizr, but not including jQuery) are included in js/script.js
+
+Fonts are included through typography.com with the first referenced style sheet. When we have a final URL we can enable the fonts for the site.
+
