@@ -52,6 +52,9 @@ header #header-top
 	position: relative
 	background-size: 100%
 
+.svg #site-name
+	background-image: url(../img/byutickets.png)
+
 #site-name, .ir
 	background-color: transparent
 	border: 0
@@ -291,29 +294,29 @@ ul.tabs.primary
 
 // Footer
 #footer-bottom .wrapper
-	text-align:center
+	text-align: center
 
 
-.svg #byuarts
-	background: url("../img/byu-arts.svg") top left no-repeat
-	background-size: contain
-	width: 130px
-	height: 25px
 
 
 #byuarts
 	background: url("../img/byu-arts.png") top left no-repeat
 	background-size: contain
 	width: 175px
-	height: 34px
+	height: 100%
 
-//.svg #byucougars
+.svg #byuarts
+	background-image: url("../img/byu-arts.svg")
+
 
 #byucougars
 	background: url("../img/byucougars.png") top left no-repeat
 	background-size: contain
 	width: 300px
-	height: 40px
+	height: 100%
+
+//.svg #byucougars
+	//background-image:
 
 #footer-bottom a
 	background-size: contain
@@ -322,6 +325,11 @@ ul.tabs.primary
 
 #footer-bottom .wrapper
 	text-align: center
+
+
+//@media all and (max-width: 640px)
+	//#footer-bottom a
+		//margin: .75em auto
 
 
 

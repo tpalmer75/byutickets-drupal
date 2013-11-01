@@ -16,6 +16,7 @@
 	h2 { margin-left: -9px;	}
 }
 
+
 // Buttons
 a.mybyu, a.sign-in, .open #search-button {
 	@include transition(background-color .3s);
@@ -72,7 +73,16 @@ a.mybyu, a.sign-in, .open #search-button {
 	}
 }
 
+// Small width
 
+#footer-bottom{
+			padding:.5em 9% 1px;
+			a {
+				display:inline-block;
+				text-indent: -999em;
+
+			}
+}
 
 
 
@@ -110,6 +120,15 @@ a.mybyu, a.sign-in, .open #search-button {
 			margin-left:4%;
 			margin-right:4%;
 		}
+
+		#footer-bottom{
+			padding:.5em 9% 1px;
+			a {
+				display:inline-block;
+				text-indent: -999em;
+
+			}
+		}
 	}
 
 	#footer-links{
@@ -128,7 +147,7 @@ a.mybyu, a.sign-in, .open #search-button {
 				display:inline-block;
 			}
 			.right {
-				margin-left:7%;
+				margin-left:0%;
 			}
 		}
 	 h2{margin:0}

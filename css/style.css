@@ -960,6 +960,9 @@ a.mybyu, a.sign-in, .open #search-button { -webkit-transition: background-color 
 
 @media all and (min-width: 32em) { #logo a.byu { background-image: url("http://byuweb.github.com/Global-Assets/img/byu-logo-header.png"); width: 350px; }
   .svg #logo a.byu { background-image: url("http://byuweb.github.com/Global-Assets/img/byu-logo-header.svg"); } }
+#footer-bottom { padding: .5em 9% 1px; }
+#footer-bottom a { display: inline-block; text-indent: -999em; }
+
 /* Medium width */
 @media all and (min-width: 37.5em) { #main-header { background: #003366 url("http://byuweb.github.com/Global-Assets/img/byu-header-bg.png") top left no-repeat; background-size: 100% 100%; }
   .svg #main-header { background-image: url("http://byuweb.github.com/Global-Assets/img/byu-header-bg.svg"); }
@@ -967,10 +970,12 @@ a.mybyu, a.sign-in, .open #search-button { -webkit-transition: background-color 
   #logo { background-color: transparent; padding-bottom: 0; border: none; }
   .parentlink { letter-spacing: 1px; }
   #page-footer .wrapper { margin-left: 4%; margin-right: 4%; }
+  #page-footer #footer-bottom { padding: .5em 9% 1px; }
+  #page-footer #footer-bottom a { display: inline-block; text-indent: -999em; }
   #footer-links .col { display: inline-block; vertical-align: top; width: 41.855%; margin-left: 5.43%; padding-top: 1em; }
   #footer-links .double { width: 89.14%; }
   #footer-links .double .right, #footer-links .double .left { width: 46%; display: inline-block; }
-  #footer-links .double .right { margin-left: 7%; }
+  #footer-links .double .right { margin-left: 0%; }
   #footer-links h2 { margin: 0; } }
 @media all and (min-width: 56.25em) { #page-footer .wrapper { margin: 1em auto 2em; }
   #page-footer #footer-bottom { padding: .5em 9% 1px; }
@@ -1286,6 +1291,8 @@ header #header-top { border-top: 1px solid transparent; height: 45px; }
 
 #site-name { height: 40px; background: url(../img/byutickets.svg) 0px 10px no-repeat; display: block; position: relative; background-size: 100%; }
 
+.svg #site-name { background-image: url(../img/byutickets.png); }
+
 #site-name, .ir { background-color: transparent; border: 0; overflow: hidden; *text-indent: -999em; }
 #site-name:before, .ir:before { content: ""; display: block; width: 0; height: 150%; }
 
@@ -1348,11 +1355,13 @@ ul.tabs.primary li.active a { border: none; color: #999999; background: white; }
 .venue.tab-content { padding-left: 5%; }
 .venue.tab-content .sectionTitle { margin-top: 0.25em; }
 
-.svg #byuarts { background: url("../img/byu-arts.svg") top left no-repeat; background-size: contain; width: 130px; height: 25px; }
+#footer-bottom .wrapper { text-align: center; }
 
-#byuarts { background: url("../img/byu-arts.png") top left no-repeat; background-size: contain; width: 175px; height: 34px; }
+#byuarts { background: url("../img/byu-arts.png") top left no-repeat; background-size: contain; width: 175px; height: 100%; }
 
-#byucougars { background: url("../img/byucougars.png") top left no-repeat; background-size: contain; width: 300px; height: 40px; }
+.svg #byuarts { background-image: url("../img/byu-arts.svg"); }
+
+#byucougars { background: url("../img/byucougars.png") top left no-repeat; background-size: contain; width: 300px; height: 100%; }
 
 #footer-bottom a { background-size: contain; display: inline-block; margin: 0.75em 2em; }
 
