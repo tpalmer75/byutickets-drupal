@@ -1284,7 +1284,7 @@ html { background-color: #444444; }
 
 html body { background-color: white; }
 
-body { background: url("../img/patterns/redox_01_gray.png"); }
+body { background: url("../img/redox_01_gray.png"); }
 body #content { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
 
 header #header-top { border-top: 1px solid transparent; height: 45px; }
