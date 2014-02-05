@@ -20,8 +20,9 @@
 
 
 
-$bgcolor: #555
+$bgcolor: #444
 $visitedColor: #539
+$front-page-overlay: transparent
 
 html
 	background-color: $bgcolor
@@ -29,12 +30,17 @@ html
 html body
 	background-color: #fff
 
-body #content
-	+box-shadow(none)
+body 
+	background: url("../img/patterns/" + $body-bg + ".png")
+	#content
+		+box-shadow(none)
+		//+box-shadow( inset 0 0 0 400px $front-page-overlay )
 
 header #header-top
 	border-top: 1px solid transparent
 	height: 45px
+	h1
+		margin-top: .5em
 
 #page
 	position: relative
@@ -46,14 +52,14 @@ header #header-top
 	display: none
 
 #site-name 
-	height: 40px
-	background: url(../img/byutickets.svg) 0px 10px no-repeat
+	height: 28px
+	background: url(../img/byutickets.png) 0px 0px no-repeat
 	display: block
 	position: relative
 	background-size: 100%
+	.svg &
+		background-image: url(../img/byutickets.svg)
 
-.svg #site-name
-	background-image: url(../img/byutickets.png)
 
 #site-name, .ir
 	background-color: transparent
@@ -67,229 +73,291 @@ header #header-top
 		width: 0
 		height: 150%
 
-
+h1, h2
+	.caps
+		font-size: .95em
 
 // Footer
 body #page-footer
-	+background-image(linear-gradient(#ddd, #ccc))
+	+background-image(linear-gradient(#666, #555))
 	border-bottom: none
-	border-top-color: #ccc
+	border-top-color: mix( #444, #555 )
+	+box-shadow( inset 0 0 50px rgba(#000, 0.2) )
 
 	a, a:link
-		color: #666
-	a:hover, a:focus
-		color: #222
+		color: #bbb
+		+transition( all 0.2s ease )
+		font-size: 1em
 	a:visited
-		color: #777
+		color: #aaa
+	a:hover, a:focus
+		color: #ddd
+	a.login
+		color: transparent
 
+	h2
+		border-bottom-color: rgba(#fff, 0.1)
+		color: #ccc
+		font-weight: 500
+		text-shadow: 0 -1px 0 rgba(#000, 0.25)
 	#footer-links
 		border-bottom: none
+		a, p
+			font-weight: 400
+			font-style: normal
+		p, h3
+			font-size: .95em
+			line-height: 22px
+		p
+			color: #ccc
+			margin-bottom: 0.9em
+		h3
+			margin-top: 0.8em
+			color: mix( #999, #aaa )
+			letter-spacing: 1px
+			text-transform: uppercase
+			font-size: .7em
+			font-weight: 500
+			line-height: 17px
+
+		.quiet
+			color: #aaa
+
+#page-footer #footer-bottom .menu a
+	text-indent: 0
+	margin: 0
+	padding: 0
+
 
 
 #footer-bottom
-	+background-image(linear-gradient(#444, $bgcolor 50%))
-	border-top-color: #666
+	+background-image( linear-gradient( darken(#444, 2%), #444 20px, #444 ) )
+	border-top-color: #333
 
+	.wrapper
+		text-align: center
 
+	body #page-footer & a
+		text-align: left
+		color: #999
+		&:hover, &:active
+			color: #ccc
 
-
-// Drupal admin
-ul.tabs.primary
-	position: absolute
-	top: -10px
-	right: 0
-	border-bottom: none
-	li 
+	@media all and (min-width: $med-width)
 		a
-			border: 1px solid $linkColor
-			+border-radius(4px)
-			color: $blue1
-			background-color: $blue9
-			&:hover
-				background-color: $blue8
-		&.active a
-			border: none
-			color: #999
-			background: #fff
+			display: inline-block
+			margin: .75em 2em
+			background: top left no-repeat
+			height: 30px
+			opacity: 0.35
+			position: relative
+			&:hover, &:active
+				opacity: 0.5
+
+		a#byuhome
+			background-image: url($asset-base + "img/byu-logo.png")
+			background-size: 345px 30px
+			width: 330px
+			.svg &
+				background-image: url($asset-base + "img/byu-logo.svg")
+
+		a#byuarts
+			background-image: url("../img/byu-arts.png")
+			background-size: contain
+			width: 160px
+			.svg &
+				background-image: url("../img/byu-arts.svg")
+
+		a#byucougars
+			background-image: url("../img/byucougars.png")
+			background-size: contain
+			width: 300px
+			//.svg &
+				//background-image:
 
 
 
 
-// Home page
-.sports.home
+
+
+
+
+
+// // Home page
+// .sports.home
 	
-	.sport
-		position: relative
-		float: left
-		width: 100%
-		margin: .35em 1%
-		overflow: hidden
-		a
-			color: #fff
-			display: block
-		a.info
-			height: 8em
-			padding: 1em
-			font-family: $serif-ssm-font-stack
-			text-align: center
-			+background-image( linear-gradient($blue2, $blue1) )
-			+box-shadow( 0 1px 5px rgba(0,0,0,0.25) )
-			+border-radius( 5px )
-			+box-sizing( border-box )
-			+text-shadow( 0 -1px 1px rgba(0,0,0,0.75) )
+// 	.sport
+// 		position: relative
+// 		float: left
+// 		width: 100%
+// 		margin: .35em 1%
+// 		overflow: hidden
+// 		a
+// 			color: #fff
+// 			display: block
+// 		a.info
+// 			height: 8em
+// 			padding: 1em
+// 			font-family: $serif-ssm-font-stack
+// 			text-align: center
+// 			+background-image( linear-gradient($blue2, $blue1) )
+// 			+box-shadow( 0 1px 5px rgba(0,0,0,0.25) )
+// 			+border-radius( 5px )
+// 			+box-sizing( border-box )
+// 			+text-shadow( 0 -1px 1px rgba(0,0,0,0.75) )
 			
-			&:hover
-				+background-image( linear-gradient( mix($blue2, $blue1), darken($blue0, .5) ) )
-				+text-shadow( 0 -1px 1px $blue0 )
-				text-decoration: none
-		a.tickets 
-			position: absolute
-			bottom: 0
-			right: 0
-			padding: .35em 1.2em
-			background-color: mix($blue3, $blue4)
-			border-top: 1px solid $blue1
-			border-left: 1px solid $blue2
-			color: $blue8
-			+border-radius( 3px 0 4px 0 )
-			+text-shadow( 0 -1px 0 $blue0 )
-			&:hover
-				text-decoration: none
-				background-color: $blue4
-				color: #fff
-				border-color: $blue5
-				&:before
-					color: $blue8
-			&:before
-				color: $blue6
+// 			&:hover
+// 				+background-image( linear-gradient( mix($blue2, $blue1), darken($blue0, .5) ) )
+// 				+text-shadow( 0 -1px 1px $blue0 )
+// 				text-decoration: none
+// 		a.tickets 
+// 			position: absolute
+// 			bottom: 0
+// 			right: 0
+// 			padding: .35em 1.2em
+// 			background-color: mix($blue3, $blue4)
+// 			border-top: 1px solid $blue1
+// 			border-left: 1px solid $blue2
+// 			color: $blue8
+// 			+border-radius( 3px 0 4px 0 )
+// 			+text-shadow( 0 -1px 0 $blue0 )
+// 			&:hover
+// 				text-decoration: none
+// 				background-color: $blue4
+// 				color: #fff
+// 				border-color: $blue5
+// 				&:before
+// 					color: $blue8
+// 			&:before
+// 				color: $blue6
 
-		.mw, .title
-			display: block
-			padding-left: 30%
+// 		.mw, .title
+// 			display: block
+// 			padding-left: 30%
 
-		.mw 
-			font-size: 1.5em
-			min-height: 0.75em
-		.title 
-			font-size: 2em
-			padding-top: .25em
-		.bgimage 
-			position: absolute
-			top: 0
-			left: 25%
-			margin-left: -60px
-
-
-	@media all and (min-width: 30em)
-		.sport
-			width: 48%
-	@media all and (min-width: $large-width)
-		.sport
-			width: 31%
+// 		.mw 
+// 			font-size: 1.5em
+// 			min-height: 0.75em
+// 		.title 
+// 			font-size: 2em
+// 			padding-top: .25em
+// 		.bgimage 
+// 			position: absolute
+// 			top: 0
+// 			left: 25%
+// 			margin-left: -60px
 
 
+// 	@media all and (min-width: 30em)
+// 		.sport
+// 			width: 48%
+// 	@media all and (min-width: $large-width)
+// 		.sport
+// 			width: 31%
 
 
 
 
 
-// Sport page
-#schedule
-	.scheduleLink
-		a
-			padding: .25em
-
-#schedule-table
-	font-size: 14px
-	width: 100%
-	border-left: none
-
-	.date, .loc, .time
-		a
-			display: block
-			pointer-events: none
-			cursor: default
-			color: #444
-
-	.date
-		.highlight.short
-			display: none
-
-		.day
-			padding: 0
-			color: #777
-
-	.opp
-		.story
-			display: none
-
-	.loc
-		img
-			margin-top: 4px
-	.time
-		.win
-			color: $green3
-		.loss
-			color: $red0
-		.recap-box
-			display: none
-
-	.web, .radio, .tv
-		display: none
-
-	.tournament-header
-		background-color: $blue7
-	td, th
-		border-left: none !important
-		border-right: none !important
-
-	tr
-		border-left: none
-		&.even, &.odd
-			background-color: #fff
-		&.tourny
-			background-color: $blue9
-		&.past
-			background-color: #e9e9e9
-			&.tourny
-				background-color: #ddd
 
 
+// // Sport page
+// #schedule
+// 	.scheduleLink
+// 		a
+// 			padding: .25em
 
-// Tickets button
-.get-tickets
-	display: inline-block
-	color: $yellow1
+// #schedule-table
+// 	font-size: 14px
+// 	width: 100%
+// 	border-left: none
 
-.get-tickets, .tickets
-	&:before
-		content: "\f145"
-		font-family: 'fontawesome'
-		font-weight: normal
-		padding-right: .5em
-		margin-left: -.25em
-		color: $yellow0
-		+text-shadow( 0 -1px 0 rgba(0,0,0,0.5) )
+// 	.date, .loc, .time
+// 		a
+// 			display: block
+// 			pointer-events: none
+// 			cursor: default
+// 			color: #444
 
-#sportTab
-	margin-top: 1.5em
+// 	.date
+// 		.highlight.short
+// 			display: none
+
+// 		.day
+// 			padding: 0
+// 			color: #777
+
+// 	.opp
+// 		.story
+// 			display: none
+
+// 	.loc
+// 		img
+// 			margin-top: 4px
+// 	.time
+// 		.win
+// 			color: $green3
+// 		.loss
+// 			color: $red0
+// 		.recap-box
+// 			display: none
+
+// 	.web, .radio, .tv
+// 		display: none
+
+// 	.tournament-header
+// 		background-color: $blue7
+// 	td, th
+// 		border-left: none !important
+// 		border-right: none !important
+
+// 	tr
+// 		border-left: none
+// 		&.even, &.odd
+// 			background-color: #fff
+// 		&.tourny
+// 			background-color: $blue9
+// 		&.past
+// 			background-color: #e9e9e9
+// 			&.tourny
+// 				background-color: #ddd
 
 
 
-// Venue page
-.venue
-	margin-top: 2em
+// // Tickets button
+// .get-tickets
+// 	display: inline-block
+// 	color: $yellow1
 
-	&.nav
-		width: 20%
-		min-width: 9em
-		float: left
+// .get-tickets, .tickets
+// 	&:before
+// 		content: "\f145"
+// 		font-family: 'fontawesome'
+// 		font-weight: normal
+// 		padding-right: .5em
+// 		margin-left: -.25em
+// 		color: $yellow0
+// 		+text-shadow( 0 -1px 0 rgba(0,0,0,0.5) )
 
-	&.tab-content
-		padding-left: 5%
+// #sportTab
+// 	margin-top: 1.5em
 
-		.sectionTitle
-			margin-top: .25em
+
+
+// // Venue page
+// .venue
+// 	margin-top: 2em
+
+// 	&.nav
+// 		width: 20%
+// 		min-width: 9em
+// 		float: left
+
+// 	&.tab-content
+// 		padding-left: 5%
+
+// 		.sectionTitle
+// 			margin-top: .25em
 
 
 // Footer
@@ -338,34 +406,62 @@ ul.tabs.primary
 // 256px
 
 @media all and (min-width: $small-width)
-	html body
-		background: url(../img/carbon_fibre.png)
 
 	#search-menu
 		display: block
-	header #header-top
-		height: 50px
+	header #header-top h1
+		margin-top: .35em
 	#site-name
-		background-position: 0px 13px
 		max-width: 275px
 
 	body 
 		.nav-container, #search-menu
-			//background-color: #fff
-			//border-bottom: 1px solid #999
+			border-bottom: none
 
 
+
+// 400px
+
+@media all and (min-width: 400px)
+	#content.front-page
+		padding-left: 9%
+		padding-right: 9%
+
+
+// 500px
+
+@media all and (min-width: 500px)
+	#content.front-page
+		padding-left: 15%
+		padding-right: 15%
+	#policy-list.accordion .accordion-group .edit-links
+		display: block
 
 // 600px
 
 @media all and (min-width: $med-width)
 	#site-name
 		max-width: 315px
-		height: 50px
+		height: 35px
 	header #header-top
 		height: 60px
-	#search-menu
-		display: none
+		h1
+			margin-top: 0.45em
+	#content.front-page
+		padding-left: 6%
+		padding-right: 6%
+	.promos.home .promo
+		width: 48%
+	.venue
+		&.tab-content
+			clear: none
+			padding-left: 5%
+		&.nav
+			width: 20%
+	.headerimage
+		display: inline
+	.venue.nav
+		margin-top: 1.5em
 
 
 
@@ -377,7 +473,16 @@ ul.tabs.primary
 	#primary-nav > ul > li:last-child
 		float: right
 		margin-right: 2%
+		&.hover
+			position: relative
 
+
+// 750px
+
+@media all and (min-width: 750px)
+	#content.front-page
+		padding-left: 9%
+		padding-right: 9%
 
 
 
@@ -385,10 +490,24 @@ ul.tabs.primary
 @media all and (min-width: $large-width)
 	header #header-top
 		height: 70px
+		h1
+			margin-top: 0.575em
 	body .nav-container
-		top: 70px	
+		top: 70px
+	#content.front-page
+		max-width: 1050px
+		width: auto
+	#page-footer #footer-links .wrapper
+		width: auto
+		max-width: 1230px
 
 
+@media all and (min-width: 1000px)
+	.promos.home .promo
+		width: 31%
+	#content.front-page
+		padding-left: 7%
+		padding-right: 7%
 	
 
 // 1146px
@@ -398,3 +517,4 @@ ul.tabs.primary
 		margin-left: 0px
 	#primary-nav > ul > li:last-child
 		margin-right: -2%
+

@@ -16,10 +16,9 @@
 	h2 { margin-left: -9px;	}
 }
 
-
 // Buttons
-a.mybyu, a.sign-in, .open #search-button {
-	@include transition(background-color .3s);
+a.mybyu, a.sign-in, .open #search-button { 
+	@include transition(background-color .3s); 
 }
 
 #header-top a.sign-in {
@@ -58,8 +57,21 @@ a.mybyu, a.sign-in, .open #search-button {
 
 // Footer
 #page-footer {
-	@include box-shadow(0 -1px 0px $brown4);
-	border-top: 1px solid #fff;
+	//@include box-shadow(0 -1px 0px $brown4);
+	//border-top: 1px solid #fff;
+
+	h2 {
+		color: #bbb;
+		@include text-shadow(0 -1px 0 rgba(#000, .5));
+	}
+}
+
+#footer-links {
+	.menu, .menu li {
+		margin: 0;
+		padding:0;
+		list-style: none;
+	}
 }
 
 
@@ -73,16 +85,7 @@ a.mybyu, a.sign-in, .open #search-button {
 	}
 }
 
-// Small width
 
-#footer-bottom{
-			padding:.5em 9% 1px;
-			a {
-				display:inline-block;
-				text-indent: -999em;
-
-			}
-}
 
 
 
@@ -120,15 +123,6 @@ a.mybyu, a.sign-in, .open #search-button {
 			margin-left:4%;
 			margin-right:4%;
 		}
-
-		#footer-bottom{
-			padding:.5em 9% 1px;
-			a {
-				display:inline-block;
-				text-indent: -999em;
-
-			}
-		}
 	}
 
 	#footer-links{
@@ -142,12 +136,16 @@ a.mybyu, a.sign-in, .open #search-button {
 		}
 		.double {
 			width:89.14%;
+			.left {
+				float:left;
+			}
 			.right, .left{
 				width:46%;
-				display:inline-block;
+				//display:inline-block;
 			}
 			.right {
-				margin-left:0%;
+				margin-left:7%;
+				float:right;
 			}
 		}
 	 h2{margin:0}
@@ -250,7 +248,8 @@ a.mybyu, a.sign-in, .open #search-button {
 	#footer-links{
 		.wrapper {
 			margin-right:0;
-			margin-left:9%;
+			margin-left:7%;
+			padding-left: 10px;
 		}
 		.col {
 			display:inline-block;
@@ -279,10 +278,11 @@ a.mybyu, a.sign-in, .open #search-button {
 @media all and (min-width: $larger-width) {
 	#page-footer #footer-links {
 		.wrapper {
-			max-width: $larger-width;
+			// width: $larger-width;
+			// max-width: $larger-width;
+			// padding-left: $larger-width * 0.09;
 			margin-left: auto;
 			margin-right: auto;
-			padding-left: 9%;
 			@include box-sizing(border-box);
 		}
 	}

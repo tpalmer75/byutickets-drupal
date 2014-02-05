@@ -27,7 +27,7 @@ body {
 	background-color: white;
 }
 
-#main-header, #content, #page-footer, #page-wrapper {
+#main-header, #content, #page-footer {
 	z-index: 2;
 	left:0%;
 	@include transition(left 0.2s ease);
@@ -36,7 +36,7 @@ body {
 body.sideNav {
 	min-height:1600px;
 
-	#main-header, #search-menu, #content, #page-footer, #page-wrapper {
+	#main-header, #search-menu, #content, #page-footer {
 		left:75%;
 	}
 
@@ -148,8 +148,8 @@ body.sideNav {
 		padding-left:1.75em;
 		border-top: 1px solid $blue2;
 		border-bottom: 1px solid $blue0;
-		padding:.4em 10%;
-		padding-right:5%;
+		padding: 0.65em 10%;
+		padding-right: 5%;
 		color: $blue9;
 		&:hover { color: #fff; }
 	}
@@ -171,7 +171,7 @@ body.sideNav {
 	@extend %sidenav;
 	.mega, .sub { @extend %submenu; }
 	li.hover .mega, li.hover .sub { @extend %activemenu;}
-	.highlight, .featured, hr { display: none; }
+	.highlight, hr { display: none; }
 	a {
 		&.current, &:hover {
 			color:#fff;
@@ -183,6 +183,38 @@ body.sideNav {
 	.mega a:hover {
 		background-color: $blue1;
 		@include background-image( linear-gradient($blue4, $blue1 1px, $blue0 ) );
+	}
+
+	.sub {
+		overflow: hidden;
+		li.featured {
+			border-bottom: 1px solid #eee;
+			margin: 0 0 0.5em;
+			overflow: visible;
+			padding-bottom: 0.4em;
+			padding-top: 0.6em;
+			display: block;
+			@media all and (max-width: $full-menu-width) {
+				.sideNav & {
+					border-bottom: none;
+					padding: 0;
+					margin: 0;
+					a {
+						font-size: 1em;
+					}
+					ul {
+						margin: 0;
+					}
+				}
+			}
+			ul {
+				margin: 0 -10px;
+			}
+			a {
+				font-weight: bold;
+				font-size: 1.05em;
+			}
+		}
 	}
 	
 }
@@ -390,7 +422,7 @@ body.sideNav {
 		background-color: $blue0;
 		border-top: 1px solid $blue3;
 		border-bottom: 1px solid $blue4;
-		@include box-shadow(0 1px 10px rgba(black, .5));
+		@include box-shadow(0 1px 25px rgba(black, .35));
 		&:after {
 			display: none;
 		}
@@ -440,6 +472,7 @@ body.sideNav {
 		background-color: #fff;
 		border-bottom: 2px solid $blue2;
 		display: none;
+		visibility: hidden;
 		font-size: 13px;
 		left: 0;
 		position: absolute;
@@ -486,6 +519,7 @@ body.sideNav {
 			border-bottom: 3px solid #369;
 			box-shadow: 0 1px 8px rgba(0,0,0,0.7);
 			display:none;
+			visibility: hidden;
 			margin-top: 0; 
 			padding: 10px;
 			position: absolute;
@@ -501,6 +535,7 @@ body.sideNav {
 		.highlight, 
 		.featured, hr {
 			display: block;
+			visibility: visible;
 		}
 
 		hr {
@@ -581,6 +616,7 @@ body.sideNav {
 		.sub { @extend %tab-nav-submenu; }
 		li.hover .sub {
 			display: block;
+			visibility: visible;
 			position: absolute;
 			left:auto;
 		}
